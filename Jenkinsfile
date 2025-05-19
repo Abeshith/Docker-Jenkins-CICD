@@ -1,4 +1,4 @@
-pipeline {
+ipipeline {
     agent any
 
     environment {
@@ -12,14 +12,7 @@ pipeline {
             steps {
                  script {
                     echo 'Checkout Git...'
-                    checkout scmGit(
-                        branches: [[name: '*/main']],
-                        extensions: [],
-                        userRemoteConfigs: [[
-                            credentialsId: 'mlops-git',
-                            url: 'https://github.com/Abeshith/Jenkins-CI-CD'
-                        ]]
-                    )
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'mlops-git', url: 'https://github.com/Abeshith/Docker-Jenkins-CICD.git']])
                 }
             }
         }
